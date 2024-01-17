@@ -1,0 +1,26 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '16.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    sudo rm -rf node_modules
+    npm install
+    npx playwright install --with-deps chrome
+
+    test_env=test npx playwright test --reporter=html
+    npx ts-node ./tests/APITesting/electrificationApi/electrificationAssessment.ts
+    npx ts-node ./tests/APITesting/electrificationApi/electrificationApiNeg.ts
+  displayName: 'Execute playwright test'
