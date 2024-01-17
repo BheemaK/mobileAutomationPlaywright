@@ -1,0 +1,20 @@
+{
+  "hasSolarPanel": false,
+  "isEligibleForSubsidy": false,
+  "isSolarPV": false,
+  "isBattery": false,
+  "isEV": false,
+  "isElectricInductionCookTop": true,
+  "isHeatPumpHotWater": false,
+  "nmi": "2BA1679B-D0D8-40E0-8759-6F94159C9C37",
+  "postcode": 3084,
+  "state": "VIC",
+  "currentCooktopSize": "<=4",
+  "usageMinutes": 90,
+  "newCooktopSize": "4",
+  "tariffRate": {
+    "first": 27.1,
+    "second": 39.25,
+    "third": 27.1
+  }
+}

@@ -1,0 +1,61 @@
+
+{
+    "inputData": {
+        "hasSolarPanel": false,
+        "isEligibleForSubsidy": false,
+        "isSolarPV": true,
+        "isBattery": false,
+        "isEV": false,
+        "isElectricInductionCookTop": false,
+        "isHeatPumpHotWater": false,
+        "nmi": "2BA1679B-D0D8-40E0-8759-6F94159C9C37",
+        "postcode": 3084,
+        "state": "VIC",
+        "tariffRate": {
+            "first": 27.1,
+            "second": 39.25,
+            "third": 27.1
+          }
+          
+    },
+
+    "outputData": {
+        "id": "id",
+        "connection": {
+          "nmi": "2BA1679B-D0D8-40E0-8759-6F94159C9C37",
+          "address": {
+            "street": "123 Smith Street",
+            "city": "Melbourne",
+            "postcode": 3084,
+            "state": "VIC"
+          }
+        },
+        "totals": {
+          "billSavingsPerYear": 692.5675483990075,
+          "energySavingsPercent": 0,
+          "carbonSavings": 46.8,
+          "estimatedCost": 3990.0,
+          "governmentSubsidy": 870.975,
+          "paybackPeriodYears": 6
+        },
+        "services": {
+          "id": "solar-panels",
+          "tag": "Budget smart",
+          "totals": {
+            "billSavingsPerYear": 692.5675483990075,
+            "energySavingsPercent": 0,
+            "carbonSavings": 46.8,
+            "estimatedCost": 3990.0,
+            "governmentSubsidy": 870.975,
+            "paybackPeriodYears": 6
+          }
+        }      
+    }
+}
+
+  
+    
+  
+
+
+

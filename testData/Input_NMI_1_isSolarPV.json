@@ -1,0 +1,17 @@
+{
+  "hasSolarPanel": false,
+  "isEligibleForSubsidy": false,
+  "isSolarPV": true,
+  "isBattery": false,
+  "isEV": false,
+  "isElectricInductionCookTop": false,
+  "isHeatPumpHotWater": false,
+  "nmi": "A031ABF9-68D0-4C69-9126-F1AC915941FB",
+  "postcode": 3041,
+  "state": "VIC",
+  "tariffRate": {
+    "first": 27.1,
+    "second": 39.25,
+    "third": 27.1
+  }
+}

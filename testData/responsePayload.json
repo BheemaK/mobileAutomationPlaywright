@@ -1,0 +1,61 @@
+{
+    "id": "9e1ef5e7-3829-4f28-aa8f-bd961f9e8560",
+    "connection": {
+      "nmi": "4102000000",
+      "address": {
+        "street": "7 Girdwood Street",
+        "city": "Clayton",
+        "postcode": "3205",
+        "state": "VIC"
+      }
+    },
+    "currentUsage": {
+      "billCostPerYear": 2000
+    },
+    "totals": {
+      "billSavingsPerYear": 1000,
+      "energySavingsPercent": 20,
+      "carbonSavingsPercent": 30,
+      "estimatedCost": 10000,
+      "governmentSubsidy": 2000,
+      "paybackPeriodYears": 5
+    },
+    "serviceEstimates": [
+      {
+        "id": "solar-panels",
+        "tag": "Budget smart",
+        "totals": {
+          "billSavingsPerYear": 1000,
+          "energySavingsPercent": 20,
+          "carbonSavingsPercent": 30,
+          "estimatedCost": 10000,
+          "governmentSubsidy": 2000,
+          "paybackPeriodYears": 5
+        }
+      },
+      {
+        "id": "heat-pump-hot-water",
+        "tag": "Best long-term saver",
+        "totals": {
+          "billSavingsPerYear": 1000,
+          "energySavingsPercent": 20,
+          "carbonSavingsPercent": 30,
+          "estimatedCost": 10000,
+          "governmentSubsidy": 2000,
+          "paybackPeriodYears": 5
+        }
+      },
+      {
+        "id": "electric-induction-cooktop",
+        "tag": "Best long-term saver",
+        "totals": {
+          "billSavingsPerYear": 1000,
+          "energySavingsPercent": 20,
+          "carbonSavingsPercent": 30,
+          "estimatedCost": 10000,
+          "governmentSubsidy": 2000,
+          "paybackPeriodYears": 5
+        }
+      }
+    ]
+  }

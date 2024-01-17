@@ -1,0 +1,33 @@
+{
+    "id": "id",
+    "connection": {
+      "nmi": "A031ABF9-68D0-4C69-9126-F1AC915941FB",
+      "address": {
+        "street": "123 Smith Street",
+        "city": "Melbourne",
+        "postcode": 3041,
+        "state": "VIC"
+      }
+    },
+    "totals": {
+      "billSavingsPerYear": 518.5699406204894,
+      "energySavingsPercent": 0,
+      "carbonSavings": 37.2,
+      "estimatedCost": 3990.0,
+      "governmentSubsidy": 995.4000000000001,
+      "paybackPeriodYears": 7
+    },
+    "serviceEstimates": {
+      "id": "solar-panels",
+      "tag": "Budget smart",
+      "totals": {
+        "billSavingsPerYear": 518.5699406204894,
+        "energySavingsPercent": 0,
+        "carbonSavings": 37.2,
+        "estimatedCost": 3990.0,
+        "governmentSubsidy": 995.4000000000001,
+        "paybackPeriodYears": 7,
+        "capacity": 3.0
+      }
+    }
+  }
