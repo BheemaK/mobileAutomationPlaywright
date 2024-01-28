@@ -23,4 +23,9 @@ steps:
     test_env=test npx playwright test --reporter=html
     npx ts-node ./tests/APITesting/electrificationApi/electrificationAssessment.ts
     npx ts-node ./tests/APITesting/electrificationApi/electrificationApiNeg.ts
+    npx tsc ./tests/mobile_automation.ts
+    node ./tests/mobile_automation.js
   displayName: 'Execute playwright test'
+
+
+
