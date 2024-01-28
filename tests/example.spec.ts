@@ -2,10 +2,62 @@ import { test, expect } from '@playwright/test'
 import { assert } from 'console';
 import { resolve } from 'path';
 import ENV from "../src/utils/env"
+import { devices, Browser, Page, chromium } from 'playwright';
 
 
+test('IOS Mobile Automation)', async ({  }, testInfo) => {
+  try {
+    const browser = await chromium.launch( {headless:false } );
+    const context = await browser.newContext(devices['iPhone 12']);
+    const page = await context.newPage();
+    await page.goto('https://www.lambdatest.com/blog/playwright-framework/');
+    const screenshot12 = await page.screenshot();   
+   // await page.screenshot({ path: 'screenshot.png', fullPage: true });
+    await testInfo.attach('screenshot', { body: screenshot12, contentType: 'image/png' });
+  
+    //*[@id="menu-item-81"]/a
+    //*[@id="menu-item-81"]/a
+    await page.locator("//*[@id=\"content\"]/div[1]/div[1]/p/a[1]").click();
+    const screenshot13 = await page.screenshot();   
+    await testInfo.attach('screenshot', { body: screenshot13, contentType: 'image/png' });
+    await page.locator("//*[@id=\"menu-item-81\"]/a").click();
+    const screenshot14 = await page.screenshot();   
+    await testInfo.attach('screenshot', { body: screenshot14, contentType: 'image/png' });
+    await page.locator("//*[@id=\"__next\"]/div[1]/div[1]/section[1]/div/div[2]/a").click();
+    const screenshot15 = await page.screenshot();   
+    await testInfo.attach('screenshot', { body: screenshot15, contentType: 'image/png' });
+   
+    
+    await page.locator("//*[@id=\"__next\"]/div[1]/div/section[1]/div[2]/a[2]").click();
+    const screenshot16 = await page.screenshot();   
+    await testInfo.attach('screenshot', { body: screenshot16, contentType: 'image/png' });
+    await page.locator("//*[@id=\"orgname\"]").fill("Robert wharf");
+    const screenshot17 = await page.screenshot();   
+    await testInfo.attach('screenshot', { body: screenshot17, contentType: 'image/png' });
+    await page.locator("//*[@id=\"inputLastName2\"]").fill("Rocky");
+    const screenshot18 = await page.screenshot();   
+    await testInfo.attach('screenshot', { body: screenshot18, contentType: 'image/png' });
+    await page.locator("//*[@id=\"contctus\"]//*[@id=\"inputEmail\"]").fill("abc@abc.com");
+    const screenshot19 = await page.screenshot();   
+    await testInfo.attach('screenshot', { body: screenshot19, contentType: 'image/png' });
+   // await page.locator("/html/body/div[1]/header/nav/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/form/div[2]/input"].fill("abc@abc.com");
 
-test('Electrification starting page(Select all options)', async ({ page }, testInfo) => {
+    //*[@id="inputEmail"]
+   
+    await page.locator("//*[@id=\"contctus\"]//*[@id=\"mobileid\"]").fill("0444222333");
+    const screenshot20 = await page.screenshot();   
+    await testInfo.attach('screenshot', { body: screenshot20, contentType: 'image/png' });
+    await page.locator("//*[@id=\"contctus\"]//*[@id=\"contbtn\"]").click();
+    const screenshot21 = await page.screenshot();   
+    await testInfo.attach('screenshot', { body: screenshot15, contentType: 'image/png' });
+    await page.waitForTimeout(12000);
+    await context.close();
+    await browser.close();
+  } catch (error) {
+    console.error('Not able to locate elements, hence failed', error);
+
+  }
+  /*
  
   try {
   console.log("Begin Test");
@@ -166,7 +218,7 @@ test('Electrification starting page(Select all options)', async ({ page }, testI
 
   }
 
-  
+  */
   
 });
 
