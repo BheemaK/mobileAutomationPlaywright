@@ -1,13 +1,4 @@
 "use strict";
-//import { devices, Browser, Page } from 'playwright';
-//async function run(): Promise<void> {
-//  const browser: Browser = await devices['Pixel 5'].launch();
-//  const context = await browser.newContext();
-//  const page: Page = await context.newPage();
-//  await page.goto('https://example.com');
-//  await page.fill('input[name="username"]', "Kllkl");
-// await page.fill('input[name="passwrod")', "nmnmnm");
-// await page.click('button[type="submit"]');
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -45,16 +36,29 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+//import { devices, Browser, Page, chromium } from 'playwright';
+var playwright_1 = require("playwright");
+//async function run(): Promise<void> {
+//  const browser: Browser = await devices['Pixel 5'].launch();
+//  const context = await browser.newContext();
+//  const page: Page = await context.newPage();
+//  await page.goto('https://example.com');
+//  await page.fill('input[name="username"]', "Kllkl");
+// await page.fill('input[name="passwrod")', "nmnmnm");
+// await page.click('button[type="submit"]');
 //await browser.close();
 //}
 //run();
-var playwright_1 = require("playwright");
+//import { chromium, devices } from 'playwright';
+//import { describe, it, after } from 'mocha';
+//import { createSession } from 'mochawesome/addContext';
 //import assert from 'node:assert';
+//test('Electrification starting page(Select all options)', async ({ page }, testInfo) => {
 (function () { return __awaiter(void 0, void 0, void 0, function () {
     var browser, context, page;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, playwright_1.chromium.launch()];
+            case 0: return [4 /*yield*/, playwright_1.chromium.launch({ headless: false })];
             case 1:
                 browser = _a.sent();
                 return [4 /*yield*/, browser.newContext(playwright_1.devices['iPhone 11'])];
@@ -64,24 +68,67 @@ var playwright_1 = require("playwright");
             case 3:
                 page = _a.sent();
                 // The actual interesting bit
-                return [4 /*yield*/, context.route('**.jpg', function (route) { return route.abort(); })];
+                // await context.route('**.jpg', route => route.abort());
+                return [4 /*yield*/, page.goto('https://www.softwaretestinghelp.com/')];
             case 4:
                 // The actual interesting bit
+                // await context.route('**.jpg', route => route.abort());
                 _a.sent();
-                return [4 /*yield*/, page.goto('https://example.com/')];
+                //const screenshot22 = await page.screenshot();
+                return [4 /*yield*/, page.screenshot({ path: 'screenshot.png', fullPage: true })];
             case 5:
+                //const screenshot22 = await page.screenshot();
                 _a.sent();
-                //assert(await page.title() === 'Example Domain'); // 👎 not a Web First assertion
+                //const textValue = await page.locator("/html/body/div/h1").
+                //console.log(textValue);
+                //console.log(page.title);
+                return [4 /*yield*/, page.locator("//*[@id=\"mega-menu-item-654\"]/a").click()];
+            case 6:
+                //const textValue = await page.locator("/html/body/div/h1").
+                //console.log(textValue);
+                //console.log(page.title);
+                _a.sent();
+                return [4 /*yield*/, page.screenshot({ path: 'screenshot1.png', fullPage: true })];
+            case 7:
+                _a.sent();
+                //await testInfo.attach
+                //await page.title() === 'Example Domain'; // 👎 not a Web First assertion
                 // Teardown
                 return [4 /*yield*/, context.close()];
-            case 6:
-                //assert(await page.title() === 'Example Domain'); // 👎 not a Web First assertion
+            case 8:
+                //await testInfo.attach
+                //await page.title() === 'Example Domain'; // 👎 not a Web First assertion
                 // Teardown
                 _a.sent();
                 return [4 /*yield*/, browser.close()];
-            case 7:
+            case 9:
                 _a.sent();
                 return [2 /*return*/];
         }
     });
 }); })();
+//import { test } from '@playwright/test';
+//test('adds a downloaded file to report', async ({ page }, testInfo) => {
+//const browser = await chromium.launch( {headless:false } );
+//const context = await browser.newContext(devices['iPhone 11']);
+//const page = await context.newPage();
+//await page.goto('https://example.com/');
+//const screenshot = await page.screenshot();
+//assert(await page.title() === 'Example Domain'); // 👎 not a Web First assertion
+// Teardown
+//await context.close();
+//await browser.close();
+// 1. Navigate to the page
+// await page.goto('https://owasp.org/www-project-web-security-testing-guide/');
+//await page.getByRole('tab', { name: 'Release Versions' }).click();
+// 2. Wait for the download
+//const downloadPromise = page.waitForEvent('download');
+//await page.getByRole('link', { name: 'Download the v4.2 PDF' }).click();
+//const download = await downloadPromise;
+// 3. Add the PDF to the report
+//const path = await download.path();
+// ^ AppData\Local\Temp\playwright-artifacts-KZfOpF\19df2a33-9f96-465a-acb5-3dc1b9041e71
+// await testInfo.attach(download.suggestedFilename(), {
+//   path: path!,
+// });
+//});
