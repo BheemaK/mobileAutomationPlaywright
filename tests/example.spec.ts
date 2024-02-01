@@ -2,48 +2,48 @@ import { test, expect } from '@playwright/test'
 import { assert } from 'console';
 import { resolve } from 'path';
 import ENV from "../src/utils/env"
-import { devices, Browser, Page, chromium } from 'playwright';
-//import type { PlaywrightCleanup, DetailedLogOptions } from "playwright-cleanup";
-//import { playwrightCleanup } from "playwright-cleanup"
+import  { xapthLocator1, xapthLocator2, xapthLocator3, xapthLocator4, xapthLocator5, xapthLocator6, xapthLocator7, xapthLocator8, xapthLocator9 } from './pageObject';
 
+import { devices, Browser, Page, chromium } from 'playwright';
 
 test('IOS Mobile Automation)', async ({  }, testInfo) => {
   try {
     const browser = await chromium.launch( {headless:false } );
-    const context = await browser.newContext(devices['iPhone 12']);
+    const deviceName = 'iphone 12'
+    const context = await browser.newContext(devices[deviceName]);
+   // const context = await browser.newContext(devices['iPhone 12']);
     const page = await context.newPage();
-    await page.goto('https://www.lambdatest.com/blog/playwright-framework/');
+    let urlName:string = ENV.BASE_URL || '';
+    await page.goto(urlName);
     const screenshot12 = await page.screenshot();   
     await testInfo.attach('screenshot', { body: screenshot12, contentType: 'image/png' });
-    await page.locator("//*[@id=\"content\"]/div[1]/div[1]/p/a[1]").click();
+    await page.locator(xapthLocator1).click();
     const screenshot13 = await page.screenshot();   
     await testInfo.attach('screenshot', { body: screenshot13, contentType: 'image/png' });
-    await page.locator("//*[@id=\"menu-item-81\"]/a").click();
+    await page.locator(xapthLocator2).click();
     const screenshot14 = await page.screenshot();   
     await testInfo.attach('screenshot', { body: screenshot14, contentType: 'image/png' });
-    await page.locator("//*[@id=\"__next\"]/div[1]/div[1]/section[1]/div/div[2]/a").click();
+    await page.locator(xapthLocator3).click();
     const screenshot15 = await page.screenshot();   
-    await testInfo.attach('screenshot', { body: screenshot15, contentType: 'image/png' });
-   
-    
-    await page.locator("//*[@id=\"__next\"]/div[1]/div/section[1]/div[2]/a[2]").click();
+    await testInfo.attach('screenshot', { body: screenshot15, contentType: 'image/png' });  
+    await page.locator(xapthLocator4).click();
     const screenshot16 = await page.screenshot();   
     await testInfo.attach('screenshot', { body: screenshot16, contentType: 'image/png' });
-    await page.locator("//*[@id=\"orgname\"]").fill("Robert wharf");
+    await page.locator(xapthLocator5).fill("Robert wharf");
     const screenshot17 = await page.screenshot();   
     await testInfo.attach('screenshot', { body: screenshot17, contentType: 'image/png' });
-    await page.locator("//*[@id=\"inputLastName2\"]").fill("Rocky");
+    await page.locator(xapthLocator6).fill("Rocky");
     const screenshot18 = await page.screenshot();   
     await testInfo.attach('screenshot', { body: screenshot18, contentType: 'image/png' });
-    await page.locator("//*[@id=\"contctus\"]//*[@id=\"inputEmail\"]").fill("abc@abc.com");
+    await page.locator(xapthLocator7).fill("abc@abc.com");
     const screenshot19 = await page.screenshot();   
     await testInfo.attach('screenshot', { body: screenshot19, contentType: 'image/png' });
-    await page.locator("//*[@id=\"contctus\"]//*[@id=\"mobileid\"]").fill("0444222333");
+    await page.locator(xapthLocator8).fill("0444222333")
     const screenshot20 = await page.screenshot();   
     await testInfo.attach('screenshot', { body: screenshot20, contentType: 'image/png' });
-    await page.locator("//*[@id=\"contctus\"]//*[@id=\"contbtn\"]").click();
+    await page.locator(xapthLocator9).click();
     const screenshot21 = await page.screenshot();   
-    await testInfo.attach('screenshot', { body: screenshot15, contentType: 'image/png' });
+    await testInfo.attach('screenshot', { body: screenshot21, contentType: 'image/png' });
     await page.waitForTimeout(12000);
     await context.close();
     await browser.close();
@@ -58,40 +58,38 @@ test('IOS Mobile Automation)', async ({  }, testInfo) => {
 test('Android Mobile Automation)', async ({  }, testInfo) => {
   try {
     const browser = await chromium.launch( {headless:false } );
-    const context = await browser.newContext(devices['galaxy 14']);
+    const deviceName = "galaxy 14";
+    const context = await browser.newContext(devices[deviceName]);
     const page = await context.newPage();
-    await page.goto('https://www.lambdatest.com/blog/playwright-framework/');
+    let urlName:string = ENV.BASE_URL || '';
+    await page.goto(urlName);
     const screenshot12 = await page.screenshot();   
     await testInfo.attach('screenshot', { body: screenshot12, contentType: 'image/png' });
-    await page.locator("//*[@id=\"content\"]/div[1]/div[1]/p/a[1]").click();
+    await page.locator(xapthLocator1).click();
     const screenshot13 = await page.screenshot();   
     await testInfo.attach('screenshot', { body: screenshot13, contentType: 'image/png' });
-    await page.locator("//*[@id=\"menu-item-81\"]/a").click();
+    await page.locator(xapthLocator2).click();
     const screenshot14 = await page.screenshot();   
     await testInfo.attach('screenshot', { body: screenshot14, contentType: 'image/png' });
-    await page.locator("//*[@id=\"__next\"]/div[1]/div[1]/section[1]/div/div[2]/a").click();
+    await page.locator(xapthLocator3).click();
     const screenshot15 = await page.screenshot();   
     await testInfo.attach('screenshot', { body: screenshot15, contentType: 'image/png' });
-   
-    
-    await page.locator("//*[@id=\"__next\"]/div[1]/div/section[1]/div[2]/a[2]").click();
+    await page.locator(xapthLocator4).click();
     const screenshot16 = await page.screenshot();   
     await testInfo.attach('screenshot', { body: screenshot16, contentType: 'image/png' });
-    await page.locator("//*[@id=\"orgname\"]").fill("Robert wharf");
+    await page.locator(xapthLocator5).fill("Robert wharf");
     const screenshot17 = await page.screenshot();   
     await testInfo.attach('screenshot', { body: screenshot17, contentType: 'image/png' });
-    await page.locator("//*[@id=\"inputLastName2\"]").fill("Rocky");
+    await page.locator(xapthLocator6).fill("Rocky");
     const screenshot18 = await page.screenshot();   
     await testInfo.attach('screenshot', { body: screenshot18, contentType: 'image/png' });
-    await page.locator("//*[@id=\"contctus\"]//*[@id=\"inputEmail\"]").fill("abc@abc.com");
+    await page.locator(xapthLocator7).fill("abc@abc.com");
     const screenshot19 = await page.screenshot();   
     await testInfo.attach('screenshot', { body: screenshot19, contentType: 'image/png' });
-  
-   
-    await page.locator("//*[@id=\"contctus\"]//*[@id=\"mobileid\"]").fill("0444222333");
+    await page.locator(xapthLocator8).fill("0444222333");
     const screenshot20 = await page.screenshot();   
     await testInfo.attach('screenshot', { body: screenshot20, contentType: 'image/png' });
-    await page.locator("//*[@id=\"contctus\"]//*[@id=\"contbtn\"]").click();
+    await page.locator(xapthLocator9).click();
     const screenshot21 = await page.screenshot();   
     await testInfo.attach('screenshot', { body: screenshot15, contentType: 'image/png' });
     await page.waitForTimeout(12000);
