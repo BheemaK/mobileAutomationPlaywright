@@ -3,6 +3,8 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
+#azure-pipeline yml file
+
 trigger:
 - main
 
@@ -26,6 +28,10 @@ steps:
     npx tsc ./tests/mobile_automation.ts
     node ./tests/mobile_automation.js
   displayName: 'Execute playwright test'
+
+
+
+
 
 
 
